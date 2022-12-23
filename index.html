@@ -8,48 +8,48 @@
 </head>
 <body>
     <script>
-        function getComputerChoice() {
+
+        // random number generator ---> game value ouput ---------------------------------
+        let getComputerChoice = () => {
             let randomNumber = Math.floor(Math.random() * 3);
-            let computerChoice;
+            let computerThrow;
 
             if (randomNumber === 0) {
-                computerChoice = "Rock";
+                computerThrow = "rock";
             } else if (randomNumber === 1) {
-                computerChoice = "Paper";
+                computerThrow = "paper";
             } else {
-                computerChoice = "Scissors";
-            }
-            console.log(ComputerChoice);
-        }
-
-        let playerChoice = 'string'.toLowerCase;
-
-        function playerVsComputer() {
-            let matchWinner;
-
-            // computer winning parameters
-            if (computerChoice === 'paper' && playerChoice === 'rock') {
-                matchWinner = 'Computer';
-            } else if (computerChoice === 'rock' && playerChoice === 'scissors') {
-                matchWinner = 'Computer';
-            } else if (computerChoice === 'scissors' && playerChoice === 'paper') {
-                matchWinner = 'Computer';
+                computerThrow = "scissors";
             };
 
-            // player winning parameters
-            if (computerChoice === 'paper' && playerChoice === 'scissors') {
-                matchWinner = 'Player';
-            } else if (computerChoice === 'rock' && playerChoice === 'paper') {
-                matchWinner = 'Player';
-            } else if (computerChoice === 'scissors' && playerChoice === 'rock') {
-                matchWinner = 'Player';
-            };
+            return computerThrow;
+        };
 
-            //unanimous match parameters
-            if (computerChoice === playerChoice) {
-                matchWinner = 'Draw';
+        let computerChoice = getComputerChoice();
+        let playerChoice = 'SCissors'
+
+        // winning match parameters ---------------------------------------------------
+        let matchPlay = (computerChoice, playerChoice) => {
+            if (playerChoice.toLowerCase() === 'scissors' && computerChoice === 'rock') {
+                console.log("Rock beats scissors. Computer wins!");
+            } else if (playerChoice.toLowerCase() === 'scissors' && computerChoice === 'paper') {
+                console.log("Scissors beats paper. Player wins!");
+            } else if (playerChoice.toLowerCase() === 'paper' && computerChoice === 'scissors') {
+                console.log("Scissors beats paper. Computer wins!");
+            } else if (playerChoice.toLowerCase() === 'paper' && computerChoice === 'rock') {
+                console.log("Paper beats rock. Player wins!");
+            } else if (playerChoice.toLowerCase() === 'rock' && computerChoice === 'paper') {
+                console.log("Paper beats rock. Computer wins!");
+            } else if (playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') {
+                console.log("Rock beats scissors. Player wins!");
+            } else {
+                console.log("Draw!");
             }
-        }
+        };
+
+        console.log(matchPlay(computerChoice, playerChoice));
+
+
         
     </script>
 </body>
