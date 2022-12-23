@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice() {
+            let randomNumber = Math.floor(Math.random() * 3);
+            let computerChoice;
+
+            if (randomNumber === 0) {
+                computerChoice = "Rock";
+            } else if (randomNumber === 1) {
+                computerChoice = "Paper";
+            } else {
+                computerChoice = "Scissors";
+            }
+            console.log(ComputerChoice);
+        }
+
+        let playerChoice = 'string'.toLowerCase;
+
+        function playerVsComputer() {
+            let matchWinner;
+
+            // computer winning parameters
+            if (computerChoice === 'paper' && playerChoice === 'rock') {
+                matchWinner = 'Computer';
+            } else if (computerChoice === 'rock' && playerChoice === 'scissors') {
+                matchWinner = 'Computer';
+            } else if (computerChoice === 'scissors' && playerChoice === 'paper') {
+                matchWinner = 'Computer';
+            };
+
+            // player winning parameters
+            if (computerChoice === 'paper' && playerChoice === 'scissors') {
+                matchWinner = 'Player';
+            } else if (computerChoice === 'rock' && playerChoice === 'paper') {
+                matchWinner = 'Player';
+            } else if (computerChoice === 'scissors' && playerChoice === 'rock') {
+                matchWinner = 'Player';
+            };
+
+            //unanimous match parameters
+            if (computerChoice === playerChoice) {
+                matchWinner = 'Draw';
+            }
+        }
+        
+    </script>
+</body>
+</html>
