@@ -32,42 +32,47 @@
             for (let i = 0; i < 5; i++) {
                 let computerChoice = getComputerChoice();
                 let playerChoice = prompt('rock, paper, or scissors?');
+                let updatedPlayerChoice = playerChoice.toLowerCase();
 
                 // winning match parameters ---------------------------------------------------
                 let matchPlay = (computerChoice, playerChoice) => {
-                    if (playerChoice.toLowerCase() === 'scissors' && computerChoice === 'rock') {
+                    if (updatedPlayerChoice === 'scissors' && computerChoice === 'rock') {
                         console.log("Rock beats scissors. Computer wins!");
                         computerScore++
-                    } else if (playerChoice.toLowerCase() === 'scissors' && computerChoice === 'paper') {
+                    } else if (updatedPlayerChoice === 'scissors' && computerChoice === 'paper') {
                         console.log("Scissors beats paper. Player wins!");
                         playerScore++
-                    } else if (playerChoice.toLowerCase() === 'paper' && computerChoice === 'scissors') {
+                    } else if (updatedPlayerChoice === 'paper' && computerChoice === 'scissors') {
                         console.log("Scissors beats paper. Computer wins!");
                         computerScore++
-                    } else if (playerChoice.toLowerCase() === 'paper' && computerChoice === 'rock') {
+                    } else if (updatedPlayerChoice === 'paper' && computerChoice === 'rock') {
                         console.log("Paper beats rock. Player wins!");
                         playerScore++
-                    } else if (playerChoice.toLowerCase() === 'rock' && computerChoice === 'paper') {
+                    } else if (updatedPlayerChoice === 'rock' && computerChoice === 'paper') {
                         console.log("Paper beats rock. Computer wins!");
                         computerScore++
-                    } else if (playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') {
+                    } else if (updatedPlayerChoice === 'rock' && computerChoice === 'scissors') {
                         console.log("Rock beats scissors. Player wins!");
                         playerScore++
                     } else {
                         console.log("Draw!");
                     }
+
                 };
+
+                // logs match outcome, player score, and computer score
                 matchPlay(computerChoice, playerChoice);
                 console.log("Computer score: " + computerScore);
                 console.log("Player score: " + playerScore);
             };
 
+            // logs the outcome of a best of 5 game based on player score vs computer score
             if (computerScore > playerScore) {
-                console.log("Computer takes the cake! Try again!");
+                console.log("Computer is the champion! Try again!");
             } else if (computerScore === playerScore) {
                 console.log("Tie game. Try again!");
             } else {
-                console.log("Player takes the cake! Congratulations!");
+                console.log("You are the champion! Congratulations!");
             }
         };
 
