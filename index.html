@@ -5,79 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="game.js" defer></script>
 </head>
 <body>
-    <script>
-
-        // random number generator ---> game value ouput ---------------------------------
-        let getComputerChoice = () => {
-            let randomNumber = Math.floor(Math.random() * 3);
-            let computerThrow;
-
-            if (randomNumber === 0) {
-                computerThrow = "rock";
-            } else if (randomNumber === 1) {
-                computerThrow = "paper";
-            } else {
-                computerThrow = "scissors";
-            };
-            return computerThrow;
-        };
-
-        // runs the game 5 times to determine a weiner
-        let game = () => {
-            let computerScore = 0;
-            let playerScore = 0;
-
-            for (let i = 0; i < 5; i++) {
-                let computerChoice = getComputerChoice();
-                let playerChoice = prompt('rock, paper, or scissors?');
-                let updatedPlayerChoice = playerChoice.toLowerCase();
-
-                // winning match parameters ---------------------------------------------------
-                let matchPlay = (computerChoice, playerChoice) => {
-                    if (updatedPlayerChoice === 'scissors' && computerChoice === 'rock') {
-                        console.log("Rock beats scissors. Computer wins!");
-                        computerScore++
-                    } else if (updatedPlayerChoice === 'scissors' && computerChoice === 'paper') {
-                        console.log("Scissors beats paper. Player wins!");
-                        playerScore++
-                    } else if (updatedPlayerChoice === 'paper' && computerChoice === 'scissors') {
-                        console.log("Scissors beats paper. Computer wins!");
-                        computerScore++
-                    } else if (updatedPlayerChoice === 'paper' && computerChoice === 'rock') {
-                        console.log("Paper beats rock. Player wins!");
-                        playerScore++
-                    } else if (updatedPlayerChoice === 'rock' && computerChoice === 'paper') {
-                        console.log("Paper beats rock. Computer wins!");
-                        computerScore++
-                    } else if (updatedPlayerChoice === 'rock' && computerChoice === 'scissors') {
-                        console.log("Rock beats scissors. Player wins!");
-                        playerScore++
-                    } else {
-                        console.log("Draw!");
-                    }
-
-                };
-
-                // logs match outcome, player score, and computer score
-                matchPlay(computerChoice, playerChoice);
-                console.log("Computer score: " + computerScore);
-                console.log("Player score: " + playerScore);
-            };
-
-            // logs the outcome of a best of 5 game based on player score vs computer score
-            if (computerScore > playerScore) {
-                console.log("Computer is the champion! Try again!");
-            } else if (computerScore === playerScore) {
-                console.log("Tie game. Try again!");
-            } else {
-                console.log("You are the champion! Congratulations!");
-            }
-        };
-
-        game();
-        
-    </script>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
 </body>
 </html>
