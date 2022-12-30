@@ -1,0 +1,20 @@
+html,
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
