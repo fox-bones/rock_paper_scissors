@@ -71,6 +71,7 @@ let game = () => {
             gameWinner.textContent = "Draw!";
             gameResults.appendChild(gameWinner);
         };
+        
         // defining a game winner with a stopping point
         if (playerScore >= 5 && computerScore < playerScore) {
             PLYscore.textContent = 'Player wins the game!';
